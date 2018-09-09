@@ -1,0 +1,12 @@
+# Spring properties
+spring:
+  application:
+     name: SpringBatchPractice
+  data:
+    cassandra:
+      contact-points: localhost
+      port          : 9042
+      keyspace-name : jcp_dpr
+      username      : cassandra
+      password      : cassandra
+      ssl           : false

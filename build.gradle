@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.5.2.RELEASE'
+    }
+}
+group 'com.jcpenney.dpr'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'eclipse'
+
+jar {
+    baseName = 'SpringBatchPractice'
+}
+repositories {
+    mavenCentral()
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+configurations {
+    provided
+    compile.extendsFrom provided
+}
+
+dependencies {
+    compile(
+            //lombok
+            [group: 'org.projectlombok', name: 'lombok', version: '1.16.8'],
+            //spring boot
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-web'],
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'],
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-cache'],
+           // [group: 'org.springframework.boot', name: 'spring-boot-starter-security'],
+            //spring-batch
+           // [group: 'org.springframework.cloud', name: 'spring-cloud-starter-oauth2'],
+            [group: 'org.springframework', name: 'spring-core'],
+            [group: 'org.springframework', name: 'spring-oxm'],
+            [group: 'org.springframework', name: 'spring-web'],
+            [group: 'org.springframework.batch', name: 'spring-batch-core'],
+            [group: 'org.springframework.batch', name: 'spring-batch-infrastructure'],
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-data-cassandra'],
+            [group: 'com.sun.mail', name: 'javax.mail', version: '1.5.5'],
+            [group: 'org.springframework.integration', name: 'spring-integration-mail', version:
+                    '4.3.2.RELEASE'],
+            [group: 'joda-time', name: 'joda-time', version:'2.3']
+
+    )
+
+}
